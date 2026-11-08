@@ -43,30 +43,33 @@ NUMBERS = [3, 8, -2, 7, 0, -5, 10]
 
 def squares(numbers: list[int]) -> list[int]:
     """Return a list with the square of each number (list comprehension)."""
-    # TODO: implement with a list comprehension
-    raise NotImplementedError("squares() is not implemented yet")
+    return [x**2 for x in numbers]
 
 
 def positives(numbers: list[int]) -> list[int]:
     """Return only the numbers greater than 0 (list comprehension)."""
-    # TODO: implement with a list comprehension
-    raise NotImplementedError("positives() is not implemented yet")
+    return [x for x in numbers if x > 0]
 
 
 def even_squares(numbers: list[int]) -> set[int]:
     """Return a set of the squares of the even numbers (set comprehension)."""
-    # TODO: implement with a set comprehension
-    raise NotImplementedError("even_squares() is not implemented yet")
+    return {x**2 for x in numbers if x % 2 == 0}
 
 
 def cubes(numbers: list[int]) -> dict[int, int]:
     """Return a dict mapping each number to its cube (dict comprehension)."""
-    # TODO: implement with a dict comprehension
-    raise NotImplementedError("cubes() is not implemented yet")
+    return {x: x**3 for x in numbers}
 
 
 if __name__ == "__main__":
     # Keep all input() and print() calls inside this block, otherwise the
     # autograder cannot import your file.
-    # TODO: call each function with NUMBERS and print the results
-    pass
+    sq = squares(NUMBERS)
+    pos = positives(NUMBERS)
+    e_sq = even_squares(NUMBERS)
+    cb = cubes(NUMBERS)
+
+    print(f"Squares: {sq}")
+    print(f"Positives: {pos}")
+    print(f"Even squares: {e_sq}")
+    print(f"Cubes: {cb}")
